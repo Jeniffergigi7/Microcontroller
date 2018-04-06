@@ -1,0 +1,5 @@
+verilog xil_defaultlib "../../../../microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" 
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

@@ -1,0 +1,1013 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Apr 05 09:24:57 2018
+# Process ID: 10104
+# Current directory: C:/Users/Nicol/Desktop/microprocessor/microprocessor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6760 C:\Users\Nicol\Desktop\microprocessor\microprocessor\microprocessor.xpr
+# Log file: C:/Users/Nicol/Desktop/microprocessor/microprocessor/vivado.log
+# Journal file: C:/Users/Nicol/Desktop/microprocessor/microprocessor\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.xpr
+INFO: [Project 1-313] Project file moved from 'E:/microprocessor' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 826.000 ; gain = 157.305
+generate_target Simulation [get_files C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/blk_mem_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'blk_mem_ROM'...
+export_ip_user_files -of_objects [get_files C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/blk_mem_ROM.xci] -no_script -force -quiet
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-37] Inspecting design source files for 'microprocessor_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/blk_mem_ROM.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/assembly.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+"xvlog -m64 --relax -prj microprocessor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_RAM/sim/blk_mem_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_final
+INFO: [VRFC 10-2458] undeclared symbol ram_wire, assumed default net type wire [C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto ebf54828871e40caa0babf68286523ec --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot microprocessor_tb_behav xil_defaultlib.microprocessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.microprocessor_final
+Compiling module xil_defaultlib.microprocessor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot microprocessor_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Apr 05 09:26:42 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 05 09:26:42 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 826.469 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '12' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "microprocessor_tb_behav -key {Behavioral:sim_1:Functional:microprocessor_tb} -tclbatch {microprocessor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source microprocessor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.RAM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.ROM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+xsim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 829.027 ; gain = 2.559
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'microprocessor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:24 . Memory (MB): peak = 829.027 ; gain = 2.559
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-37] Inspecting design source files for 'microprocessor_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/blk_mem_ROM.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/assembly.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+"xvlog -m64 --relax -prj microprocessor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_RAM/sim/blk_mem_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_final
+INFO: [VRFC 10-2458] undeclared symbol ram_wire, assumed default net type wire [C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto ebf54828871e40caa0babf68286523ec --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot microprocessor_tb_behav xil_defaultlib.microprocessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.microprocessor_final
+Compiling module xil_defaultlib.microprocessor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot microprocessor_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Apr 05 09:48:38 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 05 09:48:38 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 846.141 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "microprocessor_tb_behav -key {Behavioral:sim_1:Functional:microprocessor_tb} -tclbatch {microprocessor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source microprocessor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.RAM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.ROM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+xsim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 846.141 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'microprocessor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 846.141 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-37] Inspecting design source files for 'microprocessor_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/blk_mem_ROM.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/assembly.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+"xvlog -m64 --relax -prj microprocessor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_RAM/sim/blk_mem_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_final
+INFO: [VRFC 10-2458] undeclared symbol ram_wire, assumed default net type wire [C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto ebf54828871e40caa0babf68286523ec --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot microprocessor_tb_behav xil_defaultlib.microprocessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.microprocessor_final
+Compiling module xil_defaultlib.microprocessor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot microprocessor_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Apr 05 09:53:41 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 05 09:53:41 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 861.973 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "microprocessor_tb_behav -key {Behavioral:sim_1:Functional:microprocessor_tb} -tclbatch {microprocessor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source microprocessor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.RAM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.ROM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'microprocessor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 861.973 ; gain = 0.000
+run all
+$finish called at time : 1275 ns : File "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" Line 45
+run 10 us
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-37] Inspecting design source files for 'microprocessor_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/blk_mem_ROM.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/assembly.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+"xvlog -m64 --relax -prj microprocessor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_RAM/sim/blk_mem_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_final
+INFO: [VRFC 10-2458] undeclared symbol ram_wire, assumed default net type wire [C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto ebf54828871e40caa0babf68286523ec --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot microprocessor_tb_behav xil_defaultlib.microprocessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.microprocessor_final
+Compiling module xil_defaultlib.microprocessor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot microprocessor_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Apr 05 10:05:24 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 05 10:05:24 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 862.313 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "microprocessor_tb_behav -key {Behavioral:sim_1:Functional:microprocessor_tb} -tclbatch {microprocessor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source microprocessor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.RAM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.ROM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+xsim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 862.313 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'microprocessor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 862.313 ; gain = 0.000
+ERROR: [Vivado 12-106] *** Exception: java.lang.ArrayIndexOutOfBoundsException: -1 (See C:/Users/Nicol/Desktop/microprocessor/microprocessor/vivado_pid10104.debug)
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-37] Inspecting design source files for 'microprocessor_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/blk_mem_ROM.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/assembly.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+"xvlog -m64 --relax -prj microprocessor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_RAM/sim/blk_mem_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_final
+INFO: [VRFC 10-2458] undeclared symbol ram_wire, assumed default net type wire [C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto ebf54828871e40caa0babf68286523ec --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot microprocessor_tb_behav xil_defaultlib.microprocessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.microprocessor_final
+Compiling module xil_defaultlib.microprocessor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot microprocessor_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Apr 05 10:19:41 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 05 10:19:41 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 870.535 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "microprocessor_tb_behav -key {Behavioral:sim_1:Functional:microprocessor_tb} -tclbatch {microprocessor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source microprocessor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.RAM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.ROM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'microprocessor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 870.535 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-37] Inspecting design source files for 'microprocessor_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/blk_mem_ROM.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/assembly.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+"xvlog -m64 --relax -prj microprocessor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_RAM/sim/blk_mem_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_final
+INFO: [VRFC 10-2458] undeclared symbol ram_wire, assumed default net type wire [C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto ebf54828871e40caa0babf68286523ec --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot microprocessor_tb_behav xil_defaultlib.microprocessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.microprocessor_final
+Compiling module xil_defaultlib.microprocessor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot microprocessor_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Apr 05 10:22:36 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 05 10:22:36 2018...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 870.535 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "microprocessor_tb_behav -key {Behavioral:sim_1:Functional:microprocessor_tb} -tclbatch {microprocessor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source microprocessor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.RAM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.ROM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'microprocessor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:15 . Memory (MB): peak = 870.535 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-37] Inspecting design source files for 'microprocessor_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/blk_mem_ROM.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/assembly.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+"xvlog -m64 --relax -prj microprocessor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_RAM/sim/blk_mem_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_final
+INFO: [VRFC 10-2458] undeclared symbol ram_wire, assumed default net type wire [C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto ebf54828871e40caa0babf68286523ec --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot microprocessor_tb_behav xil_defaultlib.microprocessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.microprocessor_final
+Compiling module xil_defaultlib.microprocessor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot microprocessor_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Apr 05 10:25:46 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 05 10:25:46 2018...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 870.535 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "microprocessor_tb_behav -key {Behavioral:sim_1:Functional:microprocessor_tb} -tclbatch {microprocessor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source microprocessor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.RAM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.ROM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'microprocessor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 870.535 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-37] Inspecting design source files for 'microprocessor_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/blk_mem_ROM.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/assembly.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+"xvlog -m64 --relax -prj microprocessor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_RAM/sim/blk_mem_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_final
+INFO: [VRFC 10-2458] undeclared symbol ram_wire, assumed default net type wire [C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto ebf54828871e40caa0babf68286523ec --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot microprocessor_tb_behav xil_defaultlib.microprocessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.microprocessor_final
+Compiling module xil_defaultlib.microprocessor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot microprocessor_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Apr 05 10:32:40 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 05 10:32:40 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 870.535 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "microprocessor_tb_behav -key {Behavioral:sim_1:Functional:microprocessor_tb} -tclbatch {microprocessor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source microprocessor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.RAM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.ROM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'microprocessor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 870.535 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-37] Inspecting design source files for 'microprocessor_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/blk_mem_ROM.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/assembly.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+"xvlog -m64 --relax -prj microprocessor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_RAM/sim/blk_mem_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_final
+INFO: [VRFC 10-2458] undeclared symbol ram_wire, assumed default net type wire [C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto ebf54828871e40caa0babf68286523ec --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot microprocessor_tb_behav xil_defaultlib.microprocessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.microprocessor_final
+Compiling module xil_defaultlib.microprocessor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot microprocessor_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Apr 05 10:37:37 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 05 10:37:37 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 870.535 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "microprocessor_tb_behav -key {Behavioral:sim_1:Functional:microprocessor_tb} -tclbatch {microprocessor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source microprocessor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.RAM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.ROM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'microprocessor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 870.535 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-37] Inspecting design source files for 'microprocessor_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/blk_mem_ROM.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/assembly.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+"xvlog -m64 --relax -prj microprocessor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_RAM/sim/blk_mem_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_final
+INFO: [VRFC 10-2458] undeclared symbol ram_wire, assumed default net type wire [C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto ebf54828871e40caa0babf68286523ec --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot microprocessor_tb_behav xil_defaultlib.microprocessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.microprocessor_final
+Compiling module xil_defaultlib.microprocessor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot microprocessor_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Apr 05 10:38:23 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 05 10:38:23 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 870.535 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "microprocessor_tb_behav -key {Behavioral:sim_1:Functional:microprocessor_tb} -tclbatch {microprocessor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source microprocessor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.RAM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.ROM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'microprocessor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 870.535 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-37] Inspecting design source files for 'microprocessor_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/blk_mem_ROM.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/assembly.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+"xvlog -m64 --relax -prj microprocessor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/ip/blk_mem_RAM/sim/blk_mem_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_final
+INFO: [VRFC 10-2458] undeclared symbol ram_wire, assumed default net type wire [C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sources_1/new/microprocessor_final.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.srcs/sim_1/new/microprocessor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microprocessor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto ebf54828871e40caa0babf68286523ec --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot microprocessor_tb_behav xil_defaultlib.microprocessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2016.4/nightly/2017_01_23_1756540/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_output_stage(...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_5.blk_mem_gen_v8_3_5(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.microprocessor_final
+Compiling module xil_defaultlib.microprocessor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot microprocessor_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav/xsim.dir/microprocessor_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Apr 05 10:48:04 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 05 10:48:04 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 870.535 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Nicol/Desktop/microprocessor/microprocessor/microprocessor.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "microprocessor_tb_behav -key {Behavioral:sim_1:Functional:microprocessor_tb} -tclbatch {microprocessor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source microprocessor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.RAM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module microprocessor_tb.microprocessor_UUT.ROM_1.inst.native_mem_module.blk_mem_gen_v8_3_5_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'microprocessor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 870.535 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 870.535 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 05 11:11:18 2018...
