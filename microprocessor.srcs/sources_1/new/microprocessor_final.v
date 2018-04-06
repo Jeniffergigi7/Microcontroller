@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
-// 
+// update
 // Create Date: 04/04/2018 01:30:09 PM
 // Design Name: 
 // Module Name: microprocessor_final
@@ -53,7 +53,7 @@ ram_data_out, ram_data_in, ram_write, state);
                 decode = 6'd2,
                 execute_NOP = 6'd3,
                 execute_ADD = 6'd4,
-                //execute_SUB = 6'd5,
+                execute_SUB = 6'd5,
                 //execute_NOT = 6'd6,
                 //execute_AND = 6'd7,
                 //execute_OR = 6'd8,
@@ -119,21 +119,22 @@ ram_data_out, ram_data_in, ram_write, state);
                 case (IR[7:4])
                     4'h0: state <= execute_NOP;
                     4'h1: state <= execute_ADD;
+                    4'h2: state <= execute_SUB;
                     4'h6: state <= execute_MOV_RStoRD;
                     4'h7: begin
                         state = execute_MOV_RStoM;
                         PC <= PC + 1; // Increment PC to next instruction, but rom_address is left pointing to operand
                                       // Perform this step on all 2-byte instructions
-                    end
+                        end
                     4'h8: begin
-                        state <= execute_MOV_DatatoRD;
+                        state <= execute_MOV_DatatoRD; // Perform 2-byte 
                         PC <= PC + 1; 
-                    end
+                        end
                     4'h9: begin
                         state <= execute_MOV_MtoRD;
                         PC <= PC + 1;
-                    end
-                    default: state <= execute_NOP;
+                        end
+                        default: state <= execute_NOP;
                 endcase
             end
             
@@ -144,31 +145,85 @@ ram_data_out, ram_data_in, ram_write, state);
                 state <= fetch;
             end
             
-            /////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////
             
-            execute_MOV_DatatoRD: begin // (Operation 1000 or 8)
-                rom_address <= PC; // rom_address updated for next fetch state
-                                   // In next clock cycle, rom_address will be updated
-                                   // rom_data won't update until positive clock edge
-                                   // with new rom_address which changes to fetch state
-                                   // Thus operand rom_data is available in next state
-                state <= execute_MOV_DatatoRD2;
+             execute_ADD: begin    //perform an adding (Operation 0001 or 1)
+                rom_address <= PC;
+                    case(IR[3:0])
+                    0: R0 <= R0 + R0;
+                    1: R0 <= R0 + R1;
+                    2: R0 <= R0 + R2;
+                    3: R0 <= R0 + R3;
+                    4: R1 <= R1 + R0;
+                    5: R1 <= R1 + R1;
+                    6: R1 <= R1 + R2;
+                    7: R1 <= R1 + R3;
+                    8: R2 <= R2 + R0;
+                    9: R2 <= R2 + R1;
+                    10: R2 <= R2 + R2;
+                    11: R2 <= R2 + R3;
+                    12: R3 <= R3 + R0;
+                    13: R3 <= R3 + R1;
+                    14: R3 <= R3 + R2;
+                    15: R3 <= R3 + R3;
+                    default: begin R0 <= R0; R1 <= R1; R2 <= R2; R3 <=R3; end
+                endcase
+                state <= fetch;
             end
-            
-            execute_MOV_DatatoRD2: begin // Store a constant to a register R0 through R3
-                case(IR[1:0])
-                    0: R0 <= rom_data;
-                    1: R1 <= rom_data;
-                    2: R2 <= rom_data;
-                    3: R3 <= rom_data;
+            /////////////////////////////////////////////////////////////////// 
+                
+            execute_SUB: begin  //perform a subtracting (Operation 0010 or 2)
+                rom_address <= PC;
+                    case(IR[3:0]) 
+                    0: R0 <= R0 - R0;
+                    1: R0 <= R0 - R1;
+                    2: R0 <= R0 - R2;
+                    3: R0 <= R0 - R3;
+                    4: R1 <= R1 - R0;
+                    5: R1 <= R1 - R1;
+                    6: R1 <= R1 - R2;
+                    7: R1 <= R1 - R3;
+                    8: R2 <= R2 - R0;
+                    9: R2 <= R2 - R1;
+                    10: R2 <= R2 - R2;
+                    11: R2 <= R2 - R3;
+                    12: R3 <= R3 - R0;
+                    13: R3 <= R3 - R1;
+                    14: R3 <= R3 - R2;
+                    15: R3 <= R3 - R3;
+                    default: begin R0 <= R0; R1 <= R1; R2 <= R2; R3 <=R3; end
+                endcase
+                state <= fetch;
+            end
+            /////////////////////////////////////////////////////////////////////////
+                
+             // Move data from one register to another (Operation 0110 or 6)
+            execute_MOV_RStoRD: begin
+                case (IR[3:0])
+                    4'b0000: R0 <= R0;
+                    4'b0001: R0 <= R1;
+                    4'b0010: R0 <= R2;
+                    4'b0011: R0 <= R3;
+                    4'b0100: R1 <= R0;
+                    4'b0101: R1 <= R1;
+                    4'b0110: R1 <= R2;
+                    4'b0111: R1 <= R3;
+                    4'b1000: R2 <= R0;
+                    4'b1001: R2 <= R1;
+                    4'b1010: R2 <= R2;
+                    4'b1011: R2 <= R3;
+                    4'b1100: R3 <= R0;
+                    4'b1101: R3 <= R1;
+                    4'b1110: R3 <= R2;
+                    4'b1111: R3 <= R3;
                     default: begin R0 <= R0; R1 <= R1; R2 <= R2; R3 <= R3; end
                 endcase
                 state <= fetch;
             end
             
             /////////////////////////////////////////////////////////////////////
-            
- 	        // Move value from the registers to the RAM (Operation 0111 or 7)
+                
+             // Move value from the registers to the RAM (Operation 0111 or 7)
             execute_MOV_RStoM: 
                 begin
                     state <= execute_MOV_RStoM2;
@@ -195,33 +250,28 @@ ram_data_out, ram_data_in, ram_write, state);
                     state <= fetch;
                 end
                 
-            //////////////////////////////////////////////////////////////////////////////
-           
-            // Move data from one register to another (Operation 0110 or 6)
-            execute_MOV_RStoRD: begin
-                case (IR[3:0])
-                    4'b0000: R0 <= R0;
-                    4'b0001: R0 <= R1;
-                    4'b0010: R0 <= R2;
-                    4'b0011: R0 <= R3;
-                    4'b0100: R1 <= R0;
-                    4'b0101: R1 <= R1;
-                    4'b0110: R1 <= R2;
-                    4'b0111: R1 <= R3;
-                    4'b1000: R2 <= R0;
-                    4'b1001: R2 <= R1;
-                    4'b1010: R2 <= R2;
-                    4'b1011: R2 <= R3;
-                    4'b1100: R3 <= R0;
-                    4'b1101: R3 <= R1;
-                    4'b1110: R3 <= R2;
-                    4'b1111: R3 <= R3;
+            /////////////////////////////////////////////////////////////////////////
+                
+            execute_MOV_DatatoRD: begin // (Operation 1000 or 8)
+                rom_address <= PC; // rom_address updated for next fetch state
+                                   // In next clock cycle, rom_address will be updated
+                                   // rom_data won't update until positive clock edge
+                                   // with new rom_address which changes to fetch state
+                                   // Thus operand rom_data is available in next state
+                state <= execute_MOV_DatatoRD2;
+            end
+            
+            execute_MOV_DatatoRD2: begin // Store a constant to a register R0 through R3
+                case(IR[1:0])
+                    0: R0 <= rom_data;
+                    1: R1 <= rom_data;
+                    2: R2 <= rom_data;
+                    3: R3 <= rom_data;
                     default: begin R0 <= R0; R1 <= R1; R2 <= R2; R3 <= R3; end
                 endcase
                 state <= fetch;
-            end
-            
-            /////////////////////////////////////////////////////////////////////
+            end     
+            //////////////////////////////////////////////////////////////////////////////
             
             // Move data from memory into a register (Operation 1001 or 9)
             execute_MOV_MtoRD: begin
@@ -249,31 +299,7 @@ ram_data_out, ram_data_in, ram_write, state);
                 state <= fetch;
             end
             
-            /////////////////////////////////////////////////////////////////////
-                execute_ADD: begin    //perform an adding (Operation 0001 or 1)
-                rom_address <= PC;
-                case(IR[3:0])
-                    0: R0 <= R0 + R0;
-                    1: R0 <= R0 + R1;
-                    2: R0 <= R0 + R2;
-                    3: R0 <= R0 + R3;
-                    4: R1 <= R1 + R0;
-                    5: R1 <= R1 + R1;
-                    6: R1 <= R1 + R2;
-                    7: R1 <= R1 + R3;
-                    8: R2 <= R2 + R0;
-                    9: R2 <= R2 + R1;
-                    10: R2 <= R2 + R2;
-                    11: R2 <= R2 + R3;
-                    12: R3 <= R3 + R0;
-                    13: R3 <= R3 + R1;
-                    14: R3 <= R3 + R2;
-                    15: R3 <= R3 + R3;
-                    default: begin R0 <= R0; R1 <= R1; R2 <= R2; R3 <=R3; end
-                endcase
-                state <= fetch;
-            end
-            ///////////////////////////////////////////////////////////////////      
+            ////////////////////////////////////////////////////////////////////////
             endcase
         end
     end   
