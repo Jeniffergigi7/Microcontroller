@@ -54,7 +54,7 @@ ram_data_out, ram_data_in, ram_write, state);
                 execute_NOP = 6'd3,
                 execute_ADD = 6'd4,
                 execute_SUB = 6'd5,
-                //execute_NOT = 6'd6,
+                execute_NOT = 6'd6,
                 //execute_AND = 6'd7,
                 //execute_OR = 6'd8,
                 execute_MOV_RStoRD = 6'd9,
@@ -126,6 +126,7 @@ ram_data_out, ram_data_in, ram_write, state);
                     4'h0: state <= execute_NOP;
                     4'h1: state <= execute_ADD;
                     4'h2: state <= execute_SUB;
+                    4'h3: state <= execute_NOT;
                     4'h6: state <= execute_MOV_RStoRD;
                     4'h7: begin
                         state = execute_MOV_RStoM;
@@ -201,6 +202,31 @@ ram_data_out, ram_data_in, ram_write, state);
                     13: R3 <= R3 - R1;
                     14: R3 <= R3 - R2;
                     15: R3 <= R3 - R3;
+                    default: begin R0 <= R0; R1 <= R1; R2 <= R2; R3 <=R3; end
+                endcase
+                state <= fetch;
+            end
+            //////////////////////////////////////////////////////////////////////
+                
+            execute_NOT: begin    // Perform a not operation (Operation 0011 or 3)
+            rom_address <= PC;
+                    case(IR[3:0])
+                    0: R0 <= ~R0;
+                    1: R0 <= ~R1;
+                    2: R0 <= ~R2;
+                    3: R0 <= ~R3;
+                    4: R1 <= ~R0;
+                    5: R1 <= ~R1;
+                    6: R1 <= ~R2;
+                    7: R1 <= ~R3;
+                    8: R2 <= ~R0;
+                    9: R2 <= ~R1;
+                    10: R2 <= ~R2;
+                    11: R2 <= ~R3;
+                    12: R3 <= ~R0;
+                    13: R3 <= ~R1;
+                    14: R3 <= ~R2;
+                    15: R3 <= ~R3;
                     default: begin R0 <= R0; R1 <= R1; R2 <= R2; R3 <=R3; end
                 endcase
                 state <= fetch;
