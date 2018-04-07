@@ -71,9 +71,15 @@ ram_data_out, ram_data_in, ram_write, state);
                 // Ram read: RD <- M[address]
                 execute_MOV_MtoRD = 6'd15,
                 execute_MOV_MtoRD2 = 6'd16,
-                execute_MOV_MtoRD3 = 6'd17;
+                execute_MOV_MtoRD3 = 6'd17,
                 //execute_MOV_MtoRD4 = 6'd18, // Unneeded state, optimized to 3 states
                 //execute_MOV_MtoRD5 = 6'd19; // Unneeded state, optimized to 3 states
+                
+                // Ram write: M[address] <- RHi & M[address + 1] <- RLo
+                execute_MOV_RHiRLotoM = 6'd25,
+                execute_MOV_RHiRLotoM2 = 6'd26,
+                execute_MOV_RHiRLotoM3 = 6'd27,
+                execute_MOV_RHiRLotoM4 = 6'd28;
                 
                 // JMP and JNZ
                 //execute_JMP = 6'd20,
@@ -135,6 +141,10 @@ ram_data_out, ram_data_in, ram_write, state);
                         PC <= PC + 1;
                         end
                         default: state <= execute_NOP;
+                    4'hE: begin
+                        state <= execute_MOV_RHiRLotoM;
+                        PC <= PC + 1;
+                    end
                 endcase
             end
             
@@ -300,6 +310,33 @@ ram_data_out, ram_data_in, ram_write, state);
             end
             
             ////////////////////////////////////////////////////////////////////////
+            
+            // Stores result from multiplication operation to RAM (Operation 1110 or E)
+            execute_MOV_RHiRLotoM: begin
+                state <= execute_MOV_RHiRLotoM2; // Need to wait for updated rom_address from last cycle
+                                                 // to get new rom_data
+            end
+                
+            execute_MOV_RHiRLotoM2: begin
+                rom_address <= PC; // Get rom_address ready for next fetch instruction
+                ram_address <= rom_data; // Set ram_address to operand prior to rom_address pulling new data
+                ram_data_in <= RHi;
+                ram_write <= 1;
+                state <= execute_MOV_RHiRLotoM3;
+            end
+            
+            execute_MOV_RHiRLotoM3: begin
+                ram_address <= ram_address + 1;
+                ram_data_in <= RLo;
+                state <= execute_MOV_RHiRLotoM3;
+            end
+            
+            execute_MOV_RHiRLotoM4: begin
+                ram_write <= 0;
+                state <= fetch;
+            end
+                
+///////////////////////////////////////////////////////////////////
             endcase
         end
     end   
