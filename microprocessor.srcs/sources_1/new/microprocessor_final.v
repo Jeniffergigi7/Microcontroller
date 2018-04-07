@@ -55,7 +55,7 @@ ram_data_out, ram_data_in, ram_write, state);
                 execute_ADD = 6'd4,
                 execute_SUB = 6'd5,
                 execute_NOT = 6'd6,
-                //execute_AND = 6'd7,
+                execute_AND = 6'd7,
                 //execute_OR = 6'd8,
                 execute_MOV_RStoRD = 6'd9,
                 
@@ -233,6 +233,30 @@ ram_data_out, ram_data_in, ram_write, state);
             end
             /////////////////////////////////////////////////////////////////////////
                 
+            execute_AND: begin  // Perform AND operation between registers (Operation 0100 or 4)
+            rom_address <= PC;
+                    case(IR[3:0]) 
+                    0: R0 <= R0 & R0;
+                    1: R0 <= R0 & R1;
+                    2: R0 <= R0 & R2;
+                    3: R0 <= R0 & R3;
+                    4: R1 <= R1 & R0;
+                    5: R1 <= R1 & R1;
+                    6: R1 <= R1 & R2;
+                    7: R1 <= R1 & R3;
+                    8: R2 <= R2 & R0;
+                    9: R2 <= R2 & R1;
+                    10: R2 <= R2 & R2;
+                    11: R2 <= R2 & R3;
+                    12: R3 <= R3 & R0;
+                    13: R3 <= R3 & R1;
+                    14: R3 <= R3 & R2;
+                    15: R3 <= R3 & R3;
+                    default: begin R0 <= R0; R1 <= R1; R2 <= R2; R3 <=R3; end
+                endcase
+                state <= fetch;
+            end 
+            //////////////////////////////////////////////////////////////////////
              // Move data from one register to another (Operation 0110 or 6)
             execute_MOV_RStoRD: begin
                 case (IR[3:0])
