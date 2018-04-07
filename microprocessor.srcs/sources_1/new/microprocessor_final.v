@@ -157,7 +157,7 @@ ram_data_out, ram_data_in, ram_write, state);
             
             ////////////////////////////////////////////////////////////////////
             
-             execute_ADD: begin    //perform an adding (Operation 0001 or 1)
+             execute_ADD: begin    // Perform an addition between registers (Operation 0001 or 1)
                 rom_address <= PC;
                     case(IR[3:0])
                     0: R0 <= R0 + R0;
@@ -182,7 +182,7 @@ ram_data_out, ram_data_in, ram_write, state);
             end
             /////////////////////////////////////////////////////////////////// 
                 
-            execute_SUB: begin  //perform a subtracting (Operation 0010 or 2)
+            execute_SUB: begin  // Perform a subtraction between registers (Operation 0010 or 2)
                 rom_address <= PC;
                     case(IR[3:0]) 
                     0: R0 <= R0 - R0;
@@ -233,7 +233,7 @@ ram_data_out, ram_data_in, ram_write, state);
             
             /////////////////////////////////////////////////////////////////////
                 
-             // Move value from the registers to the RAM (Operation 0111 or 7)
+            // Move value from the registers to the RAM (Operation 0111 or 7)
             execute_MOV_RStoM: 
                 begin
                     state <= execute_MOV_RStoM2;
@@ -336,7 +336,8 @@ ram_data_out, ram_data_in, ram_write, state);
                 state <= fetch;
             end
                 
-///////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////
+            
             endcase
         end
     end   
