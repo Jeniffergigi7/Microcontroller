@@ -47,8 +47,8 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:ip:blk_mem_gen:8.3
-// IP Revision: 5
+// IP VLNV: xilinx.com:ip:blk_mem_gen:8.4
+// IP Revision: 1
 
 `timescale 1ns/1ps
 
@@ -69,10 +69,11 @@ input wire [0 : 0] wea;
 input wire [7 : 0] addra;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA DIN" *)
 input wire [7 : 0] dina;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_WRITE_MODE READ_WRITE" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA DOUT" *)
 output wire [7 : 0] douta;
 
-  blk_mem_gen_v8_3_5 #(
+  blk_mem_gen_v8_4_1 #(
     .C_FAMILY("artix7"),
     .C_XDEVICEFAMILY("artix7"),
     .C_ELABORATION_DIR("./"),
