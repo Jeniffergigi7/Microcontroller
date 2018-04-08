@@ -128,6 +128,7 @@ ram_data_out, ram_data_in, ram_write, state);
                     4'h1: state <= execute_ADD;
                     4'h2: state <= execute_SUB;
                     4'h3: state <= execute_NOT;
+                    4'h4: state <= execute_AND;
                     4'h6: state <= execute_MOV_RStoRD;
                     //two-byte instruction
                     4'h7: begin
@@ -257,7 +258,8 @@ ram_data_out, ram_data_in, ram_write, state);
                     default: begin R0 <= R0; R1 <= R1; R2 <= R2; R3 <=R3; end
                 endcase
                 state <= fetch;
-            end 
+            end
+            
             //////////////////////////////////////////////////////////////////////
              // Move data from one register to another (Operation 0110 or 6)
             execute_MOV_RStoRD: begin
