@@ -123,11 +123,13 @@ ram_data_out, ram_data_in, ram_write, state);
             decode: begin // Determine which operation to execute
                 rom_address <= PC; // With rom_data stored in IR, new rom_address can be pointed to
                 case (IR[7:4])
+                    //one-byte instruction
                     4'h0: state <= execute_NOP;
                     4'h1: state <= execute_ADD;
                     4'h2: state <= execute_SUB;
                     4'h3: state <= execute_NOT;
                     4'h6: state <= execute_MOV_RStoRD;
+                    //two-byte instruction
                     4'h7: begin
                         state = execute_MOV_RStoM;
                         PC <= PC + 1; // Increment PC to next instruction, but rom_address is left pointing to operand
