@@ -24,7 +24,8 @@ module microprocessor_final(clock, reset, R0, R1, R2, R3, RHi, RLo, PC, IR, rom_
 ram_data_out, ram_data_in, ram_write, state);
     
     input clock, reset;
-    output reg [7:0] R0, R1, R2, R3, RHi, RLo;
+    output reg [7:0] R0, R1, R2, R3;
+    output [7:0] RHi, RLo;
     output reg [7:0] PC, IR, rom_address;
     output [7:0] rom_data;
     output reg [7:0] ram_address, ram_data_in;
@@ -48,6 +49,24 @@ ram_data_out, ram_data_in, ram_write, state);
       .douta(rom_data)  // output wire [7 : 0] douta
     );
     
+    // Instantiate wires/regs needed for multiplier
+    reg [7:0] Rx, Ry;
+    wire MUL_done;
+    reg start_MUL;
+    
+    // Instantiate multiplier circuit
+    multiply multiplier_1(
+        .clk(clock),
+        .reset(reset),
+        .load_A(1'b1),
+        .load_B(1'b1),
+        .start(start_MUL),
+        .data_A(Rx),
+        .data_B(Ry),
+        .product({RHi, RLo}),
+        .done(MUL_done)
+        );
+    
     parameter   reset_cpu = 6'd0,
                 fetch = 6'd1,
                 decode = 6'd2,
@@ -57,6 +76,10 @@ ram_data_out, ram_data_in, ram_write, state);
                 execute_NOT = 6'd6,
                 execute_AND = 6'd7,
                 //execute_OR = 6'd8,
+                execute_MUL = 6'd30,
+                execute_MUL2 = 6'd31,
+                
+                // Move data between registers
                 execute_MOV_RStoRD = 6'd9,
                 
                 // Ram write: M[address} <- RS
@@ -91,7 +114,7 @@ ram_data_out, ram_data_in, ram_write, state);
     always @ (posedge clock, posedge reset) begin
         if (reset) begin
             R0 <= 0; R1 <= 0; R2 <= 0; R3 <= 0;
-            RHi <= 0; RLo <= 0;
+            //RHi <= 0; RLo <= 0;
             rom_address <= 0;
             ram_address <= 0;
             ram_write <= 0;
@@ -102,7 +125,7 @@ ram_data_out, ram_data_in, ram_write, state);
             case (state)
             reset_cpu: begin // Reset all registers when reset button is pressed
                 R0 <= 0; R1 <= 0; R2 <= 0; R3 <= 0;
-                RHi <= 0; RLo <= 0;
+                //RHi <= 0; RLo <= 0;
                 rom_address <= 0;
                 ram_address <= 0;
                 ram_write <= 0;
@@ -130,6 +153,8 @@ ram_data_out, ram_data_in, ram_write, state);
                     4'h3: state <= execute_NOT;
                     4'h4: state <= execute_AND;
                     4'h6: state <= execute_MOV_RStoRD;
+                    4'hC: state <= execute_MUL;
+                    
                     //two-byte instruction
                     4'h7: begin
                         state = execute_MOV_RStoM;
@@ -144,11 +169,11 @@ ram_data_out, ram_data_in, ram_write, state);
                         state <= execute_MOV_MtoRD;
                         PC <= PC + 1;
                         end
-                        default: state <= execute_NOP;
                     4'hE: begin
                         state <= execute_MOV_RHiRLotoM;
                         PC <= PC + 1;
                     end
+                    default: state <= execute_NOP;
                 endcase
             end
             
@@ -361,6 +386,47 @@ ram_data_out, ram_data_in, ram_write, state);
                     default: begin R0 <= R0; R1 <= R1; R2 <= R2; R3 <= R3; end
                 endcase
                 state <= fetch;
+            end
+            
+            ////////////////////////////////////////////////////////////////////////
+            
+            // Performs multiplication between 2 registers and stores
+            // result in RHi and RLo (Operation 1100 or C)
+            execute_MUL: begin
+                rom_address <= PC; // Prepare rom_address and rom_data for next fetch
+                start_MUL <= 0; // Return multiplier to 1st state to reset RHi and RLo
+                                // and then load in new values to be multiplied
+                
+                case (IR[3:2]) // Assign first number to be passed into multiplier
+                    0: Rx <= R0;
+                    1: Rx <= R1;
+                    2: Rx <= R2;
+                    3: Rx <= R3;
+                endcase
+                
+                case (IR[1:0]) // Assign second number to be passed into multiplier
+                    0: Ry <= R0;
+                    1: Ry <= R1;
+                    2: Ry <= R2;
+                    3: Ry <= R3;
+                endcase
+                
+                state <= execute_MUL2;
+            end
+            
+            execute_MUL2: begin
+                start_MUL <= 1; // Start will be set to one at clock edge
+                                // Multiplier registers are simultaneously loaded
+                                // Subsequent clock edge will move into shifting operations
+                                // to perform multiplication
+                                // Leaving start on will not affect operation of multiplier
+                                // while in shifting and done states so it can be left on
+                                
+                case (MUL_done)
+                    0: state <= execute_MUL2;
+                    1: state <= fetch;
+                endcase
+                
             end
             
             ////////////////////////////////////////////////////////////////////////
