@@ -1,16 +1,16 @@
--makelib ies/xil_defaultlib -sv \
-  "C:/Xilinx/Vivado/2016.4/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+-makelib ies_lib/xil_defaultlib -sv \
+  "D:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 -endlib
--makelib ies/xpm \
-  "C:/Xilinx/Vivado/2016.4/data/ip/xpm/xpm_VCOMP.vhd" \
+-makelib ies_lib/xpm \
+  "D:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
--makelib ies/blk_mem_gen_v8_3_5 \
-  "../../../ipstatic/simulation/blk_mem_gen_v8_3.v" \
+-makelib ies_lib/blk_mem_gen_v8_4_1 \
+  "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
 -endlib
--makelib ies/xil_defaultlib \
+-makelib ies_lib/xil_defaultlib \
   "../../../../microprocessor.srcs/sources_1/ip/blk_mem_ROM/sim/blk_mem_ROM.v" \
 -endlib
--makelib ies/xil_defaultlib \
+-makelib ies_lib/xil_defaultlib \
   glbl.v
 -endlib
 
