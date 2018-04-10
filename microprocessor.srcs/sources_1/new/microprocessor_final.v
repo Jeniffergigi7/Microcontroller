@@ -105,10 +105,10 @@ ram_data_out, ram_data_in, ram_write, state);
                 execute_MOV_RHiRLotoM4 = 6'd28;
                 
                 // JMP and JNZ
-                //execute_JMP = 6'd20,
-                //execute_JMP1 = 6'd21,
-                //execute_JMP2 = 6'd22,
-                //execute_JMP3 = 6'd23,
+                execute_JMP = 6'd20,
+                execute_JMP1 = 6'd21,
+                execute_JMP2 = 6'd22,
+                execute_JMP3 = 6'd23,
                 //execute_JNZ = 6'd24;
                 
     always @ (posedge clock, posedge reset) begin
@@ -154,8 +154,7 @@ ram_data_out, ram_data_in, ram_write, state);
                     4'h4: state <= execute_AND;
                     4'h5: state <= execute_OR;
                     4'h6: state <= execute_MOV_RStoRD;
-                    4'hC: state <= execute_MUL;
-                    
+   
                     //two-byte instruction
                     4'h7: begin
                         state = execute_MOV_RStoM;
@@ -170,6 +169,11 @@ ram_data_out, ram_data_in, ram_write, state);
                         state <= execute_MOV_MtoRD;
                         PC <= PC + 1;
                         end
+                    4'hA: begin
+                        state <= execute_JMP;
+                        PC <= PC +1;
+                        end 
+                    4'hC: state <= execute_MUL;
                     4'hE: begin
                         state <= execute_MOV_RHiRLotoM;
                         PC <= PC + 1;
@@ -414,7 +418,20 @@ ram_data_out, ram_data_in, ram_write, state);
             end
             
             ////////////////////////////////////////////////////////////////////////
-            
+            // Jump data from memory into a register (Operation 1010 or 10)
+            execute_JMP:                   
+                state <= execute_JMP1;
+            execute_JMP1: begin
+                PC <= rom_data;
+                state <= execute_JMP2;
+            end 
+            execute_JMP2: begin
+                rom_address <= PC;
+                state <= execute_JMP3;
+            end
+            execute_JMP3: 
+                state <= fetch;
+            ////////////////////////////////////////////////////////////////////////
             // Performs multiplication between 2 registers and stores
             // result in RHi and RLo (Operation 1100 or C)
             execute_MUL: begin
