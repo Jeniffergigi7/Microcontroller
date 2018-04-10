@@ -385,7 +385,7 @@ ram_data_out, ram_data_in, ram_write, state);
                 
             /////////////////////////////////////////////////////////////////////////
             
-                // Moves a constant into a register R0 through R3 (Operation 1000 or 8)
+            // Moves a constant into a register R0 through R3 (Operation 1000 or 8)
             execute_MOV_DatatoRD: begin
                 rom_address <= PC; // rom_address updated for next fetch state
                                    // In next clock cycle, rom_address will be updated
