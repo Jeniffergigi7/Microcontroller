@@ -39,7 +39,7 @@ module microprocessor_tb(
     reset = 0; clock = 0; #3;
     reset = 1; #2;
     reset = 0;
-    repeat (125) begin
+        repeat (150) begin
     clock = ~clock; #5;
     end
     $finish;
