@@ -102,13 +102,13 @@ ram_data_out, ram_data_in, ram_write, state);
                 execute_MOV_RHiRLotoM = 6'd25,
                 execute_MOV_RHiRLotoM2 = 6'd26,
                 execute_MOV_RHiRLotoM3 = 6'd27,
-                execute_MOV_RHiRLotoM4 = 6'd28;
+                execute_MOV_RHiRLotoM4 = 6'd28,
                 
                 // JMP and JNZ
                 execute_JMP = 6'd20,
                 execute_JMP1 = 6'd21,
                 execute_JMP2 = 6'd22,
-                execute_JMP3 = 6'd23,
+                execute_JMP3 = 6'd23;
                 //execute_JNZ = 6'd24;
                 
     always @ (posedge clock, posedge reset) begin
