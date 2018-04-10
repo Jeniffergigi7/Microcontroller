@@ -95,8 +95,8 @@ ram_data_out, ram_data_in, ram_write, state);
                 execute_MOV_MtoRD = 6'd15,
                 execute_MOV_MtoRD2 = 6'd16,
                 execute_MOV_MtoRD3 = 6'd17,
-                //execute_MOV_MtoRD4 = 6'd18, // Unneeded state, optimized to 3 states
-                //execute_MOV_MtoRD5 = 6'd19; // Unneeded state, optimized to 3 states
+                execute_MOV_MtoRD4 = 6'd18,
+                //execute_MOV_MtoRD5 = 6'd19, // Unneeded state, optimized to 4 states
                 
                 // Ram write: M[address] <- RHi & M[address + 1] <- RLo
                 execute_MOV_RHiRLotoM = 6'd25,
@@ -146,7 +146,7 @@ ram_data_out, ram_data_in, ram_write, state);
             decode: begin // Determine which operation to execute
                 rom_address <= PC; // With rom_data stored in IR, new rom_address can be pointed to
                 case (IR[7:4])
-                    //one-byte instruction
+                    // One-byte instruction
                     4'h0: state <= execute_NOP;
                     4'h1: state <= execute_ADD;
                     4'h2: state <= execute_SUB;
@@ -155,14 +155,14 @@ ram_data_out, ram_data_in, ram_write, state);
                     4'h5: state <= execute_OR;
                     4'h6: state <= execute_MOV_RStoRD;
    
-                    //two-byte instruction
+                    // Two-byte instruction
                     4'h7: begin
                         state = execute_MOV_RStoM;
                         PC <= PC + 1; // Increment PC to next instruction, but rom_address is left pointing to operand
                                       // Perform this step on all 2-byte instructions
                         end
                     4'h8: begin
-                        state <= execute_MOV_DatatoRD; // Perform 2-byte 
+                        state <= execute_MOV_DatatoRD; 
                         PC <= PC + 1; 
                         end
                     4'h9: begin
@@ -177,7 +177,7 @@ ram_data_out, ram_data_in, ram_write, state);
                         state <= execute_JNZ;
                         PC <= PC + 1;
                         end
-                    4'hC: state <= execute_MUL;
+                    4'hC: state <= execute_MUL; // One-byte instruction
                     4'hE: begin
                         state <= execute_MOV_RHiRLotoM;
                         PC <= PC + 1;
@@ -195,9 +195,10 @@ ram_data_out, ram_data_in, ram_write, state);
             
             ////////////////////////////////////////////////////////////////////
             
-             execute_ADD: begin    // Perform an addition between registers (Operation 0001 or 1)
+            // Perform an addition between registers (Operation 0001 or 1)
+            execute_ADD: begin
                 rom_address <= PC;
-                    case(IR[3:0])
+                case(IR[3:0])
                     0: R0 <= R0 + R0;
                     1: R0 <= R0 + R1;
                     2: R0 <= R0 + R2;
@@ -219,10 +220,11 @@ ram_data_out, ram_data_in, ram_write, state);
                 state <= fetch;
             end
             /////////////////////////////////////////////////////////////////// 
-                
-            execute_SUB: begin  // Perform a subtraction between registers (Operation 0010 or 2)
+               
+            // Perform a subtraction between registers (Operation 0010 or 2)
+            execute_SUB: begin
                 rom_address <= PC;
-                    case(IR[3:0]) 
+                case(IR[3:0]) 
                     0: R0 <= R0 - R0;
                     1: R0 <= R0 - R1;
                     2: R0 <= R0 - R2;
@@ -244,10 +246,11 @@ ram_data_out, ram_data_in, ram_write, state);
                 state <= fetch;
             end
             //////////////////////////////////////////////////////////////////////
-                
-            execute_NOT: begin    // Perform a not operation (Operation 0011 or 3)
+            
+            // Perform a not operation (Operation 0011 or 3)
+            execute_NOT: begin
             rom_address <= PC;
-                    case(IR[3:0])
+                case(IR[3:0])
                     0: R0 <= ~R0;
                     1: R0 <= ~R1;
                     2: R0 <= ~R2;
@@ -269,10 +272,11 @@ ram_data_out, ram_data_in, ram_write, state);
                 state <= fetch;
             end
             /////////////////////////////////////////////////////////////////////////
-                
-            execute_AND: begin  // Perform AND operation between registers (Operation 0100 or 4)
-            rom_address <= PC;
-                    case(IR[3:0]) 
+            
+            // Perform AND operation between registers (Operation 0100 or 4)
+            execute_AND: begin
+                rom_address <= PC;
+                case(IR[3:0]) 
                     0: R0 <= R0 & R0;
                     1: R0 <= R0 & R1;
                     2: R0 <= R0 & R2;
@@ -293,11 +297,12 @@ ram_data_out, ram_data_in, ram_write, state);
                 endcase
                 state <= fetch;
             end
-             /////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////
                 
-                execute_OR: begin  // Perform OR operation between registers (Operation 0101 or 5)
-            rom_address <= PC;
-                    case(IR[3:0]) 
+            // Perform OR operation between registers (Operation 0101 or 5)
+            execute_OR: begin
+                rom_address <= PC;
+                case(IR[3:0]) 
                     0: R0 <= R0 | R0;
                     1: R0 <= R0 | R1;
                     2: R0 <= R0 | R2;
@@ -319,7 +324,8 @@ ram_data_out, ram_data_in, ram_write, state);
                 state <= fetch;
             end
             //////////////////////////////////////////////////////////////////////
-             // Move data from one register to another (Operation 0110 or 6)
+                
+            // Move data from one register to another (Operation 0110 or 6)
             execute_MOV_RStoRD: begin
                 case (IR[3:0])
                     4'b0000: R0 <= R0;
@@ -373,8 +379,9 @@ ram_data_out, ram_data_in, ram_write, state);
                 end
                 
             /////////////////////////////////////////////////////////////////////////
-                
-            execute_MOV_DatatoRD: begin // (Operation 1000 or 8)
+            
+                // Moves a constant into a register R0 through R3 (Operation 1000 or 8)
+            execute_MOV_DatatoRD: begin
                 rom_address <= PC; // rom_address updated for next fetch state
                                    // In next clock cycle, rom_address will be updated
                                    // rom_data won't update until positive clock edge
@@ -392,7 +399,8 @@ ram_data_out, ram_data_in, ram_write, state);
                     default: begin R0 <= R0; R1 <= R1; R2 <= R2; R3 <= R3; end
                 endcase
                 state <= fetch;
-            end     
+            end
+                
             //////////////////////////////////////////////////////////////////////////////
             
             // Move data from memory into a register (Operation 1001 or 9)
@@ -410,7 +418,12 @@ ram_data_out, ram_data_in, ram_write, state);
                 state <= execute_MOV_MtoRD3;
             end
             
-            execute_MOV_MtoRD3: begin
+            execute_MOV_MtoRD3: begin // Need to wait one clock cycle for ram_address
+                                      // to update ram_data_out
+                state <= execute_MOV_MtoRD4;
+            end
+            
+            execute_MOV_MtoRD4: begin
                 case (IR[1:0])
                     2'b00: R0 <= ram_data_out;
                     2'b01: R1 <= ram_data_out;
@@ -422,7 +435,8 @@ ram_data_out, ram_data_in, ram_write, state);
             end
             
             ////////////////////////////////////////////////////////////////////////
-            // Jump data from memory into a register (Operation 1010 or 10)
+                
+            // Jump data from memory into a register (Operation 1010 or A)
             execute_JMP:                   
                 state <= execute_JMP1;
             execute_JMP1: begin
@@ -436,12 +450,14 @@ ram_data_out, ram_data_in, ram_write, state);
             execute_JMP3: 
                 state <= fetch;
             ////////////////////////////////////////////////////////////////////////
-                //(Operation 1011 or 11)
+            
+            // Jump to different instruction if R0 != 0 (Operation 1011 or B)
             execute_JNZ:                 
                 if (R0 != 8'b0)  state <= execute_JMP1;
                 else state <= execute_JMP2;
                 
             ////////////////////////////////////////////////////////////////////////
+            
             // Performs multiplication between 2 registers and stores
             // result in RHi and RLo (Operation 1100 or C)
             execute_MUL: begin
@@ -492,18 +508,20 @@ ram_data_out, ram_data_in, ram_write, state);
             execute_MOV_RHiRLotoM2: begin
                 rom_address <= PC; // Get rom_address ready for next fetch instruction
                 ram_address <= rom_data; // Set ram_address to operand prior to rom_address pulling new data
-                ram_data_in <= RHi;
-                ram_write <= 1;
+                ram_data_in <= RHi; // RAM data in wire set to RHi after clock edge
+                ram_write <= 1; // RAM set to write after clock edge; new data won't be written until next clock edge
                 state <= execute_MOV_RHiRLotoM3;
             end
             
             execute_MOV_RHiRLotoM3: begin
-                ram_address <= ram_address + 1;
-                ram_data_in <= RLo;
-                state <= execute_MOV_RHiRLotoM3;
+                // RHi is written into RAM on this clock cycle as below is updated
+                ram_data_in <= RLo; // RAM data input updated to RLo after this clock edge
+                ram_address <= ram_address + 1; // RLo will be written into next RAM location on next clock
+                state <= execute_MOV_RHiRLotoM4;
             end
             
             execute_MOV_RHiRLotoM4: begin
+                // Next memory location has RLo written in before turning off ram_write
                 ram_write <= 0;
                 state <= fetch;
             end
