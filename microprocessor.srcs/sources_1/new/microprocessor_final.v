@@ -108,8 +108,8 @@ ram_data_out, ram_data_in, ram_write, state);
                 execute_JMP = 6'd20,
                 execute_JMP1 = 6'd21,
                 execute_JMP2 = 6'd22,
-                execute_JMP3 = 6'd23;
-                //execute_JNZ = 6'd24;
+                execute_JMP3 = 6'd23,
+                execute_JNZ = 6'd24;
                 
     always @ (posedge clock, posedge reset) begin
         if (reset) begin
@@ -173,6 +173,10 @@ ram_data_out, ram_data_in, ram_write, state);
                         state <= execute_JMP;
                         PC <= PC +1;
                         end 
+                    4'hB: begin
+                        state <= execute_JNZ;
+                        PC <= PC + 1;
+                        end
                     4'hC: state <= execute_MUL;
                     4'hE: begin
                         state <= execute_MOV_RHiRLotoM;
@@ -431,6 +435,12 @@ ram_data_out, ram_data_in, ram_write, state);
             end
             execute_JMP3: 
                 state <= fetch;
+            ////////////////////////////////////////////////////////////////////////
+                //(Operation 1011 or 11)
+            execute_JNZ:                 
+                if (R0 != 8'b0)  state <= execute_JMP1;
+                else state <= execute_JMP2;
+                
             ////////////////////////////////////////////////////////////////////////
             // Performs multiplication between 2 registers and stores
             // result in RHi and RLo (Operation 1100 or C)
