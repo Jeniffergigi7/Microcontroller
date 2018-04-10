@@ -219,6 +219,7 @@ ram_data_out, ram_data_in, ram_write, state);
                 endcase
                 state <= fetch;
             end
+                
             /////////////////////////////////////////////////////////////////// 
                
             // Perform a subtraction between registers (Operation 0010 or 2)
@@ -245,6 +246,7 @@ ram_data_out, ram_data_in, ram_write, state);
                 endcase
                 state <= fetch;
             end
+                
             //////////////////////////////////////////////////////////////////////
             
             // Perform a not operation (Operation 0011 or 3)
@@ -271,6 +273,7 @@ ram_data_out, ram_data_in, ram_write, state);
                 endcase
                 state <= fetch;
             end
+                
             /////////////////////////////////////////////////////////////////////////
             
             // Perform AND operation between registers (Operation 0100 or 4)
@@ -297,6 +300,7 @@ ram_data_out, ram_data_in, ram_write, state);
                 endcase
                 state <= fetch;
             end
+                
             /////////////////////////////////////////////////////////////////////////
                 
             // Perform OR operation between registers (Operation 0101 or 5)
@@ -323,6 +327,7 @@ ram_data_out, ram_data_in, ram_write, state);
                 endcase
                 state <= fetch;
             end
+                
             //////////////////////////////////////////////////////////////////////
                 
             // Move data from one register to another (Operation 0110 or 6)
@@ -439,16 +444,20 @@ ram_data_out, ram_data_in, ram_write, state);
             // Jump data from memory into a register (Operation 1010 or A)
             execute_JMP:                   
                 state <= execute_JMP1;
+                
             execute_JMP1: begin
                 PC <= rom_data;
                 state <= execute_JMP2;
             end 
+                
             execute_JMP2: begin
                 rom_address <= PC;
                 state <= execute_JMP3;
             end
+                
             execute_JMP3: 
                 state <= fetch;
+                
             ////////////////////////////////////////////////////////////////////////
             
             // Jump to different instruction if R0 != 0 (Operation 1011 or B)
@@ -478,7 +487,6 @@ ram_data_out, ram_data_in, ram_write, state);
                     2: Ry <= R2;
                     3: Ry <= R3;
                 endcase
-                
                 state <= execute_MUL2;
             end
             
@@ -494,7 +502,6 @@ ram_data_out, ram_data_in, ram_write, state);
                     0: state <= execute_MUL2;
                     1: state <= fetch;
                 endcase
-                
             end
             
             ////////////////////////////////////////////////////////////////////////
